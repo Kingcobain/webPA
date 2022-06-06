@@ -1,0 +1,37 @@
+carousel slide {
+    background: url('img/border.jpg');
+    width: 100;
+}
+
+.btn.btn-lg {
+    line-height: 26px;
+    font-size: 20px;
+    padding: 12px 24px;
+}
+
+.btn.btn-primary {
+    background-color: #5672c4;
+    color: #fff;
+    border-radius: 57px;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 12%);
+}
+
+.btn {
+    border: 0;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.bg h3 {
+    color: gold;
+    /* margin: 0;
+    padding: 70px 25px 25px; */
+}
+
+.bg p {
+    color:#fff;
+}
+
+.bg2 h5 {
+    color:#00c4c9;
+}
