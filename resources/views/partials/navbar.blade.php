@@ -13,16 +13,67 @@
           <li class="nav-item">
             <a class="nav-link {{ ($active === "home") ? 'active' : '' }}" href="/">Home</a>
           </li>
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a class="nav-link {{ ($active === "about") ? 'active' : '' }}" href="/about">About</a>
+          </li> --}}
+          <li class="nav-item">
+            <a class="nav-link {{ ($active === "menu") ? 'active' : '' }}" href="/menu">Content</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ ($active === "game") ? 'active' : '' }}" href="/game">Games</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link {{ ($active === "category") ? 'active' : '' }}" href="/category">Category</a>
+            <a class="nav-link {{ ($active === "posts") ? 'active' : '' }}" href="/posts">Videos</a>
           </li>
         </ul>
+
+        {{-- <ul class="navbar-nav ms-auto">
+          @auth
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Welcome back, {{ auth()->user()->name }}
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/dashboard"><i class="bi bi-layout-text-window-reverse"></i> My Dashboard</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li>
+                  <form action="/logout" method="post">
+                    @csrf
+                    <button type="submit" class="dropdown-item"><i class="bi bi-box-arrow-in-right"></i> Logout</button>
+                  </form>
+                </li>
+              </ul>
+            </li>
+          @else
+            <li class="nav-item">
+                <a href="/login" class="nav-link {{ ($active === "login") ? 'active' : '' }}"><i class="bi bi-box-arrow-in-right"></i>
+                  Login</a>
+            </li>
+          @endauth
+        </ul> --}}
+
+        <ul class="navbar-nav ms-auto visually-hidden">
+          @auth
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Welcome back, {{ auth()->user()->name }}
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/dashboard"><i class="bi bi-layout-text-window-reverse"></i> My Dashboard</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li>
+                  <form action="/logout" method="post">
+                    @csrf
+                    <button type="submit" class="dropdown-item"><i class="bi bi-box-arrow-in-right"></i> Logout</button>
+                  </form>
+                </li>
+              </ul>
+            </li>
+          @else
+            <li class="nav-item">
+                <a href="/login" class="nav-link {{ ($active === "login") ? 'active' : '' }}"><i class="bi bi-box-arrow-in-right"></i>
+                  Login</a>
+            </li>
+          @endauth
+        </ul>
+
       </div>
     </div>
   </nav>

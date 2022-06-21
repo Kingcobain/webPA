@@ -1,16 +1,30 @@
 <div class="container">
-  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-    <div class="col-md-4 d-flex align-items-center ">
-      <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-        <img src="img/lwebpage.png" alt="logo" width="30" height="24">
-      </a>
-      <span class="text-muted">&copy; 2022 ESTUDY</span>
-    </div>
-
-    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-      <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"/></svg></a></li>
-      <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"/></svg></a></li>
-      <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg></a></li>
+  <footer class="py-3 my-4">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><a href="/" class="nav-link {{ ($active === "home") ? 'active' : '' }} px-2 text-muted">Home</a></li>
+      <li class="nav-item"><a href="/about" class="nav-link {{ ($active === "about") ? 'active' : '' }} px-2 text-muted">Team</a></li>
+      @auth
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-muted" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Welcome back, {{ auth()->user()->name }}
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/dashboard"><i class="bi bi-layout-text-window-reverse"></i> My Dashboard</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li>
+              <form action="/logout" method="post">
+              @csrf
+                <button type="submit" class="dropdown-item"><i class="bi bi-box-arrow-in-right"></i> Logout</button>
+              </form>
+            </li>
+          </ul>
+        </li>
+        @else
+          <li class="nav-item">
+            <a href="/login" class="nav-link {{ ($active === "login") ? 'active' : '' }} text-muted">Login</a>
+          </li>
+      @endauth
     </ul>
+    <p class="text-center text-muted">&copy; 2022 Estudy</p>
   </footer>
 </div>
