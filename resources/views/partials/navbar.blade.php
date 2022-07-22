@@ -14,13 +14,13 @@
             <a class="nav-link {{ ($active === "home") ? 'active' : '' }}" href="/">Home</a>
           </li>
           {{-- <li class="nav-item">
-            <a class="nav-link {{ ($active === "about") ? 'active' : '' }}" href="/about">About</a>
+            <a class="nav-link {{ ($active === "menu") ? 'active' : '' }}" href="/menu">Content</a>
           </li> --}}
           <li class="nav-item">
-            <a class="nav-link {{ ($active === "menu") ? 'active' : '' }}" href="/menu">Content</a>
+            <a class="nav-link {{ ($active === "posts") ? 'active' : '' }}" href="/posts">Videos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ ($active === "posts") ? 'active' : '' }}" href="/posts">Videos</a>
+            <a class="nav-link {{ ($active === "games") ? 'active' : '' }}" href="/games">Games</a>
           </li>
         </ul>
 

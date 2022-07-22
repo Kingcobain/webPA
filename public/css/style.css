@@ -61,35 +61,6 @@
     user-select: none;
 }
 
-/* @media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-    font-size: 3.5rem;
-    }
-} */
-
-/* .featurette-divider {
-    margin: 5rem 0; 
-} */
-
-/* .featurette-heading {
-    font-weight: 300;
-    line-height: 1;
-    letter-spacing: -.05rem;
-} */
-
-/* @media (min-width: 40em) {
-
-.carousel-caption p {
-    margin-bottom: 1.25rem;
-    font-size: 1.25rem;
-    line-height: 1.4;
-    }
-
-.featurette-heading {
-    font-size: 50px;
-    }
-} */
-
 @media (min-width: 62em) {
 
 .featurette-heading {
@@ -97,15 +68,41 @@
     }
 }
 
-/* .marketing .col-lg-4 {
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-.marketing h2 {
-    font-weight: 400;
+main {
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
-.marketing .col-lg-4 p {
-    margin-right: .75rem;
-    margin-left: .75rem;
+
+.image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%)
+}
+
+.container-game:hover .image {
+    opacity: 0.3;
+}
+
+.container-game:hover .middle {
+    opacity: 1;
+}
+
+/* .button-game {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: transparent;
+    padding: 16px 32px;
 } */

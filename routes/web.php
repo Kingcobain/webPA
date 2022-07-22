@@ -44,6 +44,13 @@ Route::get('/categories', function(){
     ]);
 });
 
+Route::get('/games', function(){
+    return view('games', [
+        'active' => 'games',
+        'title' => 'Games'
+    ]);
+});
+
 Route::get('/posts', [PostController::class, 'index']);
 
 //halaman single post

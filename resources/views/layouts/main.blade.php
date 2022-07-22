@@ -5,6 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    {{-- <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> --}}
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
@@ -14,7 +17,8 @@
     {{-- Boostrap Icons --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 
-    {{-- Home Boostrap --}}
+    {{-- Menu Boostrap --}}
+    <link href="/css/product.css" rel="stylesheet">
     
 
     <title>PA | {{ $title }}</title>
@@ -27,7 +31,7 @@
       <div>
           @yield('container')
       </div>
-      <div class="row sticky-sm-bottom container-fluid">
+      <div class="sticky-sm-bottom position-relative">
         @include('partials.footer')
       </div>
   </body>

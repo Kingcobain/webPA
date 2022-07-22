@@ -2,27 +2,31 @@
 
 @section('container')
 
-    <section class="bg-white">
-        <div class="row my-5">
-            <h2 class="text-center">{{ $title }}</h2>
+    <div class="container-fluid">
+        <div class="row py-3 text-center">
+            <h2>{{ $title }}</h2>
         </div>
-    </section>
+    </div>
+    
 
-    <div class="row justify-content-center mb-3">
-        <div class="col-md-6">
-            <form action="/posts">
-                @if (request('category'))
-                    <input type="hidden" name="category" value="{{ request('category') }}">
-                @endif
-                @if (request('author'))
-                    <input type="hidden" name="author" value="{{ request('author') }}">
-                @endif
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Search.." name="search" value="{{ request('search') }}">
-                    <button class="btn btn-dark" type="submit">Search</button>
-                </div>
-            </form>
+    <div class="container-fluid">
+        <div class="row justify-content-center mb-3">
+            <div class="col-md-6">
+                <form action="/posts">
+                    @if (request('category'))
+                        <input type="hidden" name="category" value="{{ request('category') }}">
+                    @endif
+                    @if (request('author'))
+                        <input type="hidden" name="author" value="{{ request('author') }}">
+                    @endif
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Search.." name="search" value="{{ request('search') }}">
+                        <button class="btn btn-dark" type="submit">Search</button>
+                    </div>
+                </form>
+            </div>
         </div>
+
     </div>
 
     @if ($posts->count())
@@ -36,11 +40,11 @@
                 <img src="https://source.unsplash.com/600x200?{{ $posts[0]->category->name }}" class="card-img-top" alt="{{ $posts[0]->category->name }}">
             @endif --}}
             @if ($posts[0]->video)
-                <div style="max-height: 400px; ">
-                    <video height="400" controls poster="">
-                        <source src="{{ asset('storage/' . $posts[0]->video) }}" alt="{{ $posts[0]->category->name }}" class="img-fluid">
-                    </video>
-                </div>
+                {{-- <div style="max-height: 400px; ">
+                </div> --}}
+                <video height="300" controls>
+                    <source src="{{ asset('storage/' . $posts[0]->video) }}" alt="{{ $posts[0]->category->name }}" class="img-fluid">
+                </video>
             @else
                 <img src="https://source.unsplash.com/600x200?{{ $posts[0]->category->name }}" class="card-img-top" alt="{{ $posts[0]->category->name }}">
             @endif
@@ -62,7 +66,7 @@
     </section>
     
 
-    <div class="container">
+    <div class="container mb-5">
         <div class="row">
             @foreach($posts->skip(1) as $post)
                 <div class="col-md-4 mb-3 ">
@@ -89,13 +93,14 @@
                                 </small>
                             </p>
                             <p class="card-text">{{ $post->excerpt }}</p>
-                            <a href="/posts/{{ $post->slug }}" class="btn btn-primary">Read More...</a>
+                            <a href="/posts/{{ $post->slug }}" class="btn btn-primary">View More...</a>
                         </div>
                     </div>
                 </div>
             @endforeach
         </div>
     </div>
+    <br>
 
     @else
 
