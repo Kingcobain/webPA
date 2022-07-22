@@ -79,7 +79,7 @@
                         @endif --}}
                         @if ($post->video)
                             <video controls>
-                                <source src="{{ asset('storage/' . $post->video) }}" class="img-fluid">
+                                <source src="{{ asset('storage/post-videos' . $post->video) }}" class="img-fluid">
                             </video>
                         @else
                             <img src="https://source.unsplash.com/500x400?{{ $post->category->name }}" class="card-img-top" alt="{{ $post->category->name }}">
