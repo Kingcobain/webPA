@@ -49,7 +49,7 @@
             <div class="mb-3">
                 <label for="video" class="form-label">Post Video</label>
                 <div class="img-fluid mb-3 col-sm-5">
-                    <video class="video-preview " controls>
+                    <video class="video-preview " style="max-height: 400px;" controls>
                         <source type="video/mp4">
                     </video>
                 </div>
