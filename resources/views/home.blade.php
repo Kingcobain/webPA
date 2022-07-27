@@ -31,129 +31,46 @@
     </div>    
   </section>
 
-  <div class="album py-5 bg-white mb-3 ">
-    <div class="container ">
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mt-3">
-        <div class="col">
-          <div class="card shadow-sm">
-            <div class="bd-placeholder-img card-img-top" width="100%" height="225" role="video" focusable="false">
-              <video width="100%" height="100%" poster="img/thumb.jpg" controls>
-                <source src="{{ asset('storage/post-videos/VnD5jen2twnvuutS4QoD1oCiF1voWgFjZePjrluC.mp4') }}" alt="" class="img-fluid">
-              </video>
-            </div>
-            <div class="card-body">
-              <p class="card-text">Matriks Perkalian 3x3</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a href="/posts" class="text-decoration-none btn btn-primary" style="color: black">View</a>
-                </div>
-                <small class="text-muted">10 views</small>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        
-
-        <div class="col">
-          <div class="card shadow-sm">
-            <div class="bd-placeholder-img card-img-top" width="100%" height="225" role="video" focusable="false">
-              <video width="100%" height="100%" poster="img/thumb2.jpg" controls>
-                <source src="{{ asset('storage/post-videos/Nei4tlLxGnNUdf0MZzuMUsd6qGlLlPgOFprBUNIK.mp4') }}" alt="" class="img-fluid">
-              </video>
-            </div>
-            <div class="card-body">
-              <p class="card-text">Video Dummy</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a href="/posts" class="text-decoration-none btn btn-primary" style="color: black">View</a>
+      <div class="container mb-5">
+        <div class="row">
+            @foreach($posts as $post)
+                <div class="col-md-4 mb-3 ">
+                    <div class="card ">
+                        {{-- @if ($post->image)
+                            <img src="{{ asset('storage/' . $post->image) }}" class="img-fluid">
+                        @else
+                            <img src="https://source.unsplash.com/500x400?{{ $post->category->name }}" class="card-img-top" alt="{{ $post->category->name }}">
+                        @endif --}}
+                        @if ($post->video)
+                            <video controls>
+                                <source src="{{ asset('storage/' . $post->video) }}" class="img-fluid">
+                            </video>
+                        @else
+                            <img src="https://source.unsplash.com/500x400?{{ $post->category->name }}" class="card-img-top" alt="{{ $post->category->name }}">
+                        @endif
+                        <div class="card-body">
+                            <p class="card-title fw-bold">{{ $post->title }}</p>
+                            <p>
+                                <small class="text-muted">
+                                    By. <a href="/posts?author={{ $post->author->username }}" class="text-decoration-none">{{ $post->author->name }}</a>
+                                    <br>
+                                    {{ $post->created_at->diffForHumans() }}
+                                </small>
+                            </p>
+                            
+                            <a href="/posts/{{ $post->slug }}" class="btn btn-primary">View More...</a>
+                        </div>
+                    </div>
                 </div>
-                <small class="text-muted">10 views</small>
-              </div>
-            </div>
-          </div>
+            @endforeach
         </div>
-        
-        <div class="col">
-          <div class="card shadow-sm">
-            <div class="bd-placeholder-img card-img-top" width="100%" height="225" role="video" focusable="false">
-              <video width="100%" height="100%" poster="img/thumb3.jpg" controls>
-                <source src="{{ asset('storage/post-videos/egflM4JlEVzfE2kz7K2Rp0A1fSYj6HZAixu7Aqee.mp4') }}" alt="" class="img-fluid">
-              </video>
-            </div>
-            <div class="card-body">
-              <p class="card-text">Video Dummy</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a href="/posts" class="text-decoration-none btn btn-primary" style="color: black">View</a>
-                </div>
-                <small class="text-muted">10 views</small>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card shadow-sm">
-            <div class="bd-placeholder-img card-img-top" width="100%" height="225" role="video" focusable="false">
-              <video width="100%" height="100%" poster="img/thumb4.jpg" controls>
-                <source src="{{ asset('storage/post-videos/d5qkCPRiOz1EfEcKwix91MAl05Uqf0JdHq8ES7aK.mp4') }}" alt="" class="img-fluid">
-              </video>
-            </div>
-            <div class="card-body">
-              <p class="card-text">Video Dummy</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a href="/posts" class="text-decoration-none btn btn-primary" style="color: black">View</a>
-                </div>
-                <small class="text-muted">10 views</small>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card shadow-sm">
-            <div class="bd-placeholder-img card-img-top" width="100%" height="225" role="video" focusable="false">
-              <video width="100%" height="100%" poster="img/thumb5.jpg" controls>
-                <source src="{{ asset('storage/post-videos/7n9T2XGO0NvziA4X7KuJTewFigDb7atUbv5tC8YF.mp4') }}" alt="" class="img-fluid">
-              </video>
-            </div>
-            <div class="card-body">
-              <p class="card-text">Video Dummy</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a href="/posts" class="text-decoration-none btn btn-primary" style="color: black">View</a>
-                </div>
-                <small class="text-muted">10 views</small>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card shadow-sm">
-            <div class="bd-placeholder-img card-img-top" width="100%" height="225" role="video" focusable="false">
-              <video width="100%" height="100%" poster="img/thumb6.jpg" controls>
-                <source src="{{ asset('storage/post-videos/5pM5VJsSpvZdB7qiPTeVRqjrv4P5IzMymQeszd41.mp4') }}" alt="" class="img-fluid">
-              </video>
-            </div>
-            <div class="card-body">
-              <p class="card-text">Video Dummy</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a href="/posts" class="text-decoration-none btn btn-primary" style="color: black">View</a>
-                </div>
-                <small class="text-muted">10 views</small>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <br>
-      </div>
     </div>
-  </div>
+    <br>
+
+    <div class="d-flex justify-content-center">
+      {{ $posts->links() }}
+    </div>
 
 </main>
 

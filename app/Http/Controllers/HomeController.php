@@ -12,7 +12,7 @@ class HomeController extends Controller
         return view('home', [
             "title" => "Home",
             "active" => 'home',
-            
+            "posts" => Post::latest()->filter(request(['search', 'category', 'author']))->paginate(6)->withQueryString()
         ]);
     }
 }

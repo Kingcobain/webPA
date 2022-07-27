@@ -58,7 +58,7 @@ class DashboardPostController extends Controller
         }
 
         if($request->file('video')) {
-            $validatedData['video'] = $request->file('video')->store('public/post-videos');
+            $validatedData['video'] = $request->file('video')->store('post-videos');
         }
 
         $validatedData['user_id'] = auth()->user()->id;

@@ -40,8 +40,6 @@
                 <img src="https://source.unsplash.com/600x200?{{ $posts[0]->category->name }}" class="card-img-top" alt="{{ $posts[0]->category->name }}">
             @endif --}}
             @if ($posts[0]->video)
-                {{-- <div style="max-height: 400px; ">
-                </div> --}}
                 <video height="300" controls>
                     <source src="{{ asset('storage/' . $posts[0]->video) }}" alt="{{ $posts[0]->category->name }}" class="img-fluid">
                 </video>
