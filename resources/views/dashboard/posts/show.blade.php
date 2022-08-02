@@ -29,8 +29,8 @@
                     @endif --}}
 
                     @if ($post->video)
-                        <div class="my-3" style="max-height: 400px;">
-                            <video controls poster="">
+                        <div class="my-3" style="height:auto; width:100%">
+                            <video controls>
                                 <source src="{{ asset('storage/' . $post->video) }}" class="img-fluid">
                             </video>
                         </div>

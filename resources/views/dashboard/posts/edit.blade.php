@@ -123,7 +123,7 @@
         const video = document.querySelector('#video');
         const videoPreview = document.querySelector('.video-preview');
 
-        // videoPreview.style.display = 'block';
+        //videoPreview.style.display = 'block';
 
         const oFReader = new FileReader();
         oFReader.readAsDataURL(video.files[0]);
